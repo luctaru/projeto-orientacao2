@@ -1,0 +1,39 @@
+<form class="form">
+
+  <h3>Professores</h3>
+  <div class="content" *ngIf="teachers">
+    <mat-list *ngFor="let teacher of teachers">
+      <mat-list-item value="teacher" class="list-item" (click)="redirectToProfOri(teacher)">
+        Nome: {{teacher?.nome}} <br> Ra: {{teacher?.ra}}
+      </mat-list-item>
+      <button mat-button (click)="editTeacher(teacher)">EDITAR</button>
+      <button mat-button (click)="removeTeacher(teacher)">REMOVER</button>
+    </mat-list>
+  </div>
+  <div class="content" *ngIf="!teachers"><span>Nenhum professor cadastrado.</span></div>
+
+  <h3>Alunos</h3>
+  <div class="content" *ngIf="students">
+    <mat-list *ngFor="let student of students">
+      <mat-list-item value="student" (click)="editStudent(student)" class="list-item">
+        Nome: {{student?.nome}} <br> Ra: {{student?.ra}}
+      </mat-list-item>
+      <button mat-button (click)="editStudent(student)">EDITAR</button>
+      <button mat-button (click)="removeStudent(student)">REMOVER</button>
+    </mat-list>
+  </div>
+  <div class="content" *ngIf="!students"><span>Nenhum aluno cadastrado.</span></div>
+
+  <h3>Orientações</h3>
+  <div class="content" *ngIf="orientations">
+    <mat-list *ngFor="let orientation of orientations">
+      <mat-list-item value="student" class="list-item">
+        Nome: {{orientation?.nome}} <br> Prof: {{orientation?.prof.nome}} <br> Aluno: {{orientation?.alu.nome}}
+      </mat-list-item>
+      <button mat-button (click)="editOrientation(orientation)">EDITAR</button>
+      <button mat-button (click)="removeOrientation(orientation)">REMOVER</button>
+    </mat-list>
+  </div>
+  <div class="content" *ngIf="!orientations"><span>Nenhuma orientação cadastrada.</span></div>
+
+</form>

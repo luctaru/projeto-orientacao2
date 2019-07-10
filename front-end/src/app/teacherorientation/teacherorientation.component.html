@@ -1,0 +1,9 @@
+<h3>Orientações</h3>
+  <div class="content" *ngIf="orientations">
+    <mat-list *ngFor="let orientation of orientations">
+      <mat-list-item value="student" class="list-item">
+        Nome: {{orientation?.nome}} <br> Prof: {{orientation?.prof.nome}} <br> Aluno: {{orientation?.alu.nome}}
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <div class="content" *ngIf="!orientations"><span>Nenhuma orientação cadastrada.</span></div>

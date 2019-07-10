@@ -1,0 +1,13 @@
+<form class="form" [formGroup] = "form">
+  <h3>Aluno</h3>
+
+  <mat-form-field class="content">
+    <input matInput placeholder="Nome" formControlName="nome" name="name" required>
+  </mat-form-field>
+
+  <mat-form-field class="content">
+    <input matInput placeholder="RA" type="number" formControlName="ra" name="ra" required>
+  </mat-form-field>
+
+  <button mat-flat-button type="button" color="primary" (click)="save()">Salvar</button>
+</form>

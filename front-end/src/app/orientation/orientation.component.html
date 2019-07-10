@@ -1,0 +1,28 @@
+<form class="form" [formGroup]="form">
+  <h3>Orientações</h3>
+
+  <mat-form-field class="content">
+    <input matInput placeholder="Nome da Orientação" formControlName="nome" name="nome" required>
+  </mat-form-field>
+
+  <mat-form-field class="content">
+    <mat-label>Professor</mat-label>
+    <mat-select required formControlName="prof" name="prof">
+      <mat-option *ngFor="let teacher of teachers" [value]="teacher">
+        {{teacher.nome}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="content">
+    <mat-label>Aluno</mat-label>
+    <mat-select required formControlName="alu" name="alu">
+      <mat-option *ngFor="let student of students" [value]="student">
+        {{student.nome}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-flat-button type="button" color="primary" (click)="save()">Salvar</button>
+
+</form>

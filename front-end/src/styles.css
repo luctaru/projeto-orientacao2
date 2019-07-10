@@ -1,0 +1,33 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.content {
+  width: 25em;
+}
+
+.list-item :hover {
+  cursor: pointer;
+  background-color: rgba(106, 103, 255, 0.795);
+}
+
+.list-item {
+  height: 70px !important;
+}
